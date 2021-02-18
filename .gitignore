@@ -8,3 +8,5 @@ layout.md
 variables.env
 *.env
 .keystone
+frontend/node_modules/
+backend/node_modules/
