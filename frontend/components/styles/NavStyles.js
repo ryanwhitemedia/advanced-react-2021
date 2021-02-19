@@ -47,6 +47,7 @@ const NavStyles = styled.ul`
     }
     &:hover,
     &:focus {
+      text-decoration: none;
       outline: none;
       &:after {
         width: calc(100% - 60px);

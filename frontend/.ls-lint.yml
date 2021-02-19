@@ -1,0 +1,6 @@
+packages/*/{src,__tests__}:
+  .js: kebab-case
+  .ts: camelCase | PascalCase
+  .d.ts: camelCase
+  .spec.ts: camelCase | PascalCase
+  .mock.ts: camelCase
