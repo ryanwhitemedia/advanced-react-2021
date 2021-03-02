@@ -34,7 +34,7 @@ export default function UpdateProduct({ id }) {
       onSubmit={async (e) => {
         e.preventDefault();
         // Submit input fields to backen
-        const res = await updateProduct({
+        await updateProduct({
           variables: {
             id: id,
             name: inputs.name,
@@ -42,7 +42,6 @@ export default function UpdateProduct({ id }) {
             price: inputs.price,
           },
         });
-        console.log(res);
       }}
     >
       <DisplayError error={error || updateError} />

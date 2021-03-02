@@ -3,7 +3,6 @@ import { useMutation } from '@apollo/client';
 
 import Form from './styles/Form';
 import useForm from '../lib/useForm';
-import { CURRENT_USER_QUERY } from './User';
 import DisplayError from './ErrorMessage';
 
 const SIGNUP_MUTATION = gql`
@@ -23,14 +22,13 @@ export default function SignUp() {
     name: '',
   });
 
-  const [signup, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
+  const [signup, { data, error }] = useMutation(SIGNUP_MUTATION, {
     variables: { name: inputs.name, email: inputs.email, password: inputs.password },
   });
 
   async function handleSubmit(e) {
     e.preventDefault();
     await signup().catch(console.error);
-    console.log({ data, loading, error });
     resetForm();
   }
 
