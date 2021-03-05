@@ -3,6 +3,7 @@ import Logout from './Logout';
 import NavStyles from './styles/NavStyles';
 import { useUser } from './User';
 import { useCart } from '../lib/cartState';
+import CartCount from './CartCount';
 
 export default function Nav() {
   const user = useUser();
@@ -19,6 +20,7 @@ export default function Nav() {
           <Logout />
           <button type="button" onClick={toggleCart}>
             My Cart
+            <CartCount count={user.cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)} />
           </button>
         </>
       )}
